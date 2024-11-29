@@ -27,9 +27,7 @@
 
 ;; Private functions
 (define-private (validate-principal (address principal))
-    (and 
-        (is-some (principal-destruct? address))
-        (not (is-eq address (var-get contract-owner)))))
+    (not (is-eq address (var-get contract-owner))))
 
 ;; Public functions
 (define-public (set-guardian (guardian principal))
